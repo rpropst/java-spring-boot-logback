@@ -2,6 +2,8 @@ package io.sentry.demos.example;
 
 import java.util.List;
 
+import com.google.gson.Gson;
+
 public class Order {
     private List<Item> cart;
     private String email;
@@ -19,5 +21,10 @@ public class Order {
 
     public String getEmail() {
         return email;
+    }
+
+    public String toJson() {
+        Gson gson = new Gson();
+        return gson.toJson(cart);
     }
 }
